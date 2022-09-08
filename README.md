@@ -50,53 +50,38 @@ I am going to create a table with  4 cities that I would love to recommend someo
 # Pithy Quote
 
 > “Money is a tool, so I don't have to be.”
- *_Eddie Mumford*
+ >> *Eddie Mumford*
 
-<Br>
-> "Hell is empty and all the devils are here." William Shakespeare
+
+> "Hell is empty and all the devils are here."
+ >> *William Shakespeare*
 
 
 ---
 
-# Dijkstra Algorithm
-> Dijkstra's algorithm is an algorithm for finding the shortest paths between nodes in a graph, which may represent, for example, road networks. It was conceived by computer scientist Edsger W. Dijkstra in 1956 and published three years later. The algorithm exists in many variant
+# Code Fencing
+> Non-Form Fieldset Look
+>> https://stackoverflow.com/questions/9812898/is-it-wrong-to-use-the-fieldset-tag-without-form-tag
+``` css
+html
+<section class="fieldset">
+    <h1>This is not a fieldset</h1>
+    <p>Booyah!</p>
+</section>
 
-[Click Here to Know More](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
-
-
-
-
-const int INF = 1000000000;
-vector<vector<pair<int, int>>> adj;
-
-void dijkstra(int s, vector<int> & d, vector<int> & p) {
-    int n = adj.size();
-    d.assign(n, INF);
-    p.assign(n, -1);
-    vector<bool> u(n, false);
-
-    d[s] = 0;
-    for (int i = 0; i < n; i++) {
-        int v = -1;
-        for (int j = 0; j < n; j++) {
-            if (!u[j] && (v == -1 || d[j] < d[v]))
-                v = j;
-        }
-
-        if (d[v] == INF)
-            break;
-
-        u[v] = true;
-        for (auto edge : adj[v]) {
-            int to = edge.first;
-            int len = edge.second;
-
-            if (d[v] + len < d[to]) {
-                d[to] = d[v] + len;
-                p[to] = v;
-            }
-        }
-    }
+.fieldset {
+    position: relative;
+    border: 1px solid #ddd;
+    padding: 10px;
 }
 
-[code source](https://cp-algorithms.com/graph/dijkstra.html)
+.fieldset h1 {
+    position: absolute;
+    top: 0;
+    font-size: 18px;
+    line-height: 1;
+    margin: -9px 0 0; /* half of font-size */   background: #fff;
+     padding: 0 3px;
+}
+```
+**[Above code snippet](https://css-tricks.com/snippets/css/non-form-fieldset-look/)**
